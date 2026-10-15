@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b1c">
+  <title>İyi ki Doğdun Ramazan ✨</title>
+  <meta name="description" content="Ramazan'a sevgiyle hazırlanmış küçük bir doğum günü sürprizi.">
+  <style>
+    :root {
+      --night: #080b1c;
+      --night2: #111735;
+      --gold: #f5d99b;
+      --cream: #fff7e9;
+      --muted: #c6c8dc;
+      --rose: #f3a6bd;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      color: var(--cream);
+      background: radial-gradient(ellipse at 50% 0%, #1c2550 0%, var(--night) 52%, #050610 100%);
+      font-family: Georgia, "Times New Roman", serif;
+      overflow-x: hidden;
+    }
+
+    button {
+      font: inherit
+    }
+
+    #starfield {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none
+    }
+
+    .site {
+      position: relative;
+      z-index: 1
+    }
+
+    .music {
+      position: fixed;
+      z-index: 20;
+      right: 14px;
+      top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border: 1px solid #ffffff30;
+      border-radius: 999px;
+      background: #0b1025d9;
+      backdrop-filter: blur(12px);
+      color: var(--cream);
+      box-shadow: 0 8px 30px #0003;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+    }
+
+    .music button {
+      border: 0;
+      background: transparent;
+      color: var(--gold);
+      cursor: pointer;
+      font-size: 17px
+    }
+
+    .music span {
+      max-width: 115px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 100px 22px 70px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      width: min(72vw, 520px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: #6577d51b;
+      filter: blur(24px);
+      z-index: -1;
+    }
+
+    .eyebrow {
+      font: 11px/1.6 Arial, sans-serif;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--gold)
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 11vw, 7.8rem);
+      font-weight: normal;
+      line-height: .98;
+      margin: 22px 0 18px;
+      letter-spacing: -.045em
+    }
+
+    h1 em {
+      font-weight: normal;
+      color: var(--gold);
+      display: block
+    }
+
+    .hero-copy {
+      max-width: 540px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: clamp(1rem, 2.6vw, 1.2rem);
+      line-height: 1.9
+    }
+
+    .moon {
+      font-size: 38px;
+      margin: 0 auto 22px;
+      filter: drop-shadow(0 0 20px #f5d99b70);
+      animation: moonFloat 4s ease-in-out infinite
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+      padding: 14px 23px;
+      border: 1px solid #f5d99b80;
+      border-radius: 999px;
+      color: #18152a;
+      background: linear-gradient(135deg, #f7e4b8, #d8b76f);
+      cursor: pointer;
+      box-shadow: 0 0 35px #f5d99b20;
+      transition: transform .25s, box-shadow .25s;
+      text-decoration: none;
+      font: 600 13px Arial, sans-serif;
+      letter-spacing: .04em;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 42px #f5d99b40
+    }
+
+    .scroll-note {
+      position: absolute;
+      bottom: 22px;
+      left: 0;
+      right: 0;
+      color: #a9aecb;
+      font: 10px Arial, sans-serif;
+      letter-spacing: .2em;
+      text-transform: uppercase
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 1080px;
+      margin: auto
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 42px
+    }
+
+    .kicker {
+      color: var(--gold);
+      font: 10px Arial, sans-serif;
+      letter-spacing: .3em;
+      text-transform: uppercase
+    }
+
+    h2 {
+      font-size: clamp(2.1rem, 6vw, 4rem);
+      font-weight: normal;
+      line-height: 1.1;
+      margin: 13px 0
+    }
+
+    .section-intro {
+      max-width: 560px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 16px
+    }
+
+    .divider {
+      height: 1px;
+      width: 80px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 24px auto
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px
+    }
+
+    .memory {
+      position: relative;
+      min-height: 280px;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 4px;
+      border: 1px solid #ffffff20;
+      background: linear-gradient(145deg, #20294c, #11152c 60%, #2b1d3c);
+      box-shadow: 0 18px 45px #0003;
+      transform: translateY(18px);
+      opacity: 0;
+      transition: transform .7s ease, opacity .7s ease, border-color .3s;
+    }
+
+    .memory.visible {
+      transform: translateY(0);
+      opacity: 1
+    }
+
+    .memory:nth-child(2),
+    .memory:nth-child(5) {
+      margin-top: 28px
+    }
+
+    .memory img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .7s
+    }
+
+    .memory:hover img {
+      transform: scale(1.045)
+    }
+
+    .memory:after {
+      content: "";
+      position: absolute;
+      inset: 40% 0 0;
+      background: linear-gradient(transparent, #080b1ce8);
+      pointer-events: none
+    }
+
+    .memory .placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 22px;
+      color: #e9dcb8;
+      font: 12px/1.8 Arial, sans-serif;
+      letter-spacing: .08em;
+      background: radial-gradient(ellipse at 50% 25%, #46527a 0%, #202849 38%, #101329 100%);
+    }
+
+    .placeholder b {
+      display: block;
+      font: normal 36px Georgia, serif;
+      color: var(--gold);
+      margin-bottom: 12px
+    }
+
+    .memory figcaption {
+      position: absolute;
+      z-index: 2;
+      bottom: 18px;
+      left: 18px;
+      right: 18px;
+      font-size: 18px;
+      line-height: 1.35
+    }
+
+    .memory figcaption small {
+      display: block;
+      color: #e5d9bd;
+      font: 9px Arial, sans-serif;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 7px
+    }
+
+    .cake-section {
+      text-align: center
+    }
+
+    .cake-card {
+      max-width: 650px;
+      margin: auto;
+      padding: 34px 20px 38px;
+      border: 1px solid #ffffff20;
+      border-radius: 8px;
+      background: linear-gradient(145deg, #171d3bce, #0b0e20e8);
+      box-shadow: 0 25px 80px #0004;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cake-card:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, #f5d99b12, transparent 60%);
+      pointer-events: none
+    }
+
+    .cake-instruction {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 440px;
+      margin: 0 auto 16px
+    }
+
+    .cake-wrap {
+      position: relative;
+      width: min(100%, 360px);
+      height: 285px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center
+    }
+
+    .cake {
+      position: relative;
+      width: 240px;
+      height: 130px;
+      margin-bottom: 24px;
+      filter: drop-shadow(0 18px 18px #0006)
+    }
+
+    .cake-base {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 240px;
+      height: 88px;
+      border-radius: 8px 8px 20px 20px;
+      background: linear-gradient(90deg, #6f284a, #a94e70 45%, #742d50);
+      border-bottom: 8px solid #4e1d3a
+    }
+
+    .cake-top {
+      position: absolute;
+      left: 0;
+      bottom: 78px;
+      width: 240px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #ffe7d7, #e9a6b8 70%, #bd6685);
+      border-bottom: 5px solid #f8d4d9
+    }
+
+    .icing-drip {
+      position: absolute;
+      top: 23px;
+      width: 18px;
+      height: 29px;
+      background: #f5c6d1;
+      border-radius: 0 0 12px 12px
+    }
+
+    .drip1 {
+      left: 38px;
+      height: 35px
+    }
+
+    .drip2 {
+      left: 92px;
+      height: 23px
+    }
+
+    .drip3 {
+      right: 42px;
+      height: 32px
+    }
+
+    .drip4 {
+      right: 14px;
+      height: 18px
+    }
+
+    .berry {
+      position: absolute;
+      bottom: 101px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #8b173e;
+      box-shadow: inset -3px -3px 0 #4d102c
+    }
+
+    .berry1 {
+      left: 50px
+    }
+
+    .berry2 {
+      left: 112px;
+      bottom: 108px
+    }
+
+    .berry3 {
+      right: 46px
+    }
+
+    .candle {
+      position: absolute;
+      bottom: 116px;
+      width: 13px;
+      height: 63px;
+      border-radius: 4px 4px 2px 2px;
+      background: repeating-linear-gradient(135deg, #fff0cb 0 7px, #d7b5ed 7px 14px);
+      z-index: 3
+    }
+
+    .c1 {
+      left: 65px;
+      height: 58px
+    }
+
+    .c2 {
+      left: 113px;
+      height: 76px
+    }
+
+    .c3 {
+      right: 64px;
+      height: 60px
+    }
+
+    .flame {
+      position: absolute;
+      left: 50%;
+      top: -23px;
+      transform: translateX(-50%);
+      width: 15px;
+      height: 23px;
+      border-radius: 55% 45% 50% 50%;
+      background: radial-gradient(ellipse at 50% 72%, #fff8c5 0 15%, #ffbe52 42%, #ff743e 70%, transparent 73%);
+      filter: drop-shadow(0 0 9px #ffb44e);
+      animation: flicker .65s infinite alternate
+    }
+
+    .blown .flame {
+      display: none
+    }
+
+    .cake-hint {
+      color: var(--gold);
+      font: 11px Arial, sans-serif;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-top: 0
+    }
+
+    .cake-message {
+      display: none;
+      color: var(--cream);
+      font-size: clamp(1.3rem, 4vw, 2rem);
+      line-height: 1.5;
+      margin: 20px auto 0;
+      animation: fadeUp .8s both
+    }
+
+    .cake-message.show {
+      display: block
+    }
+
+    .letter-wrap {
+      max-width: 760px;
+      margin: auto;
+      position: relative;
+      padding: clamp(24px, 6vw, 55px);
+      border: 1px solid #f5d99b38;
+      background: linear-gradient(145deg, #171b35d9, #0b0d1bd9);
+      box-shadow: 0 25px 80px #0003
+    }
+
+    .letter-wrap:before,
+    .letter-wrap:after {
+      content: "✦";
+      position: absolute;
+      color: var(--gold);
+      font-size: 20px
+    }
+
+    .letter-wrap:before {
+      top: 15px;
+      left: 17px
+    }
+
+    .letter-wrap:after {
+      right: 17px;
+      bottom: 15px
+    }
+
+    .letter {
+      white-space: pre-line;
+      color: #e6e4ee;
+      font-size: clamp(16px, 2.5vw, 19px);
+      line-height: 2
+    }
+
+    .letter strong {
+      color: var(--gold);
+      font-weight: normal
+    }
+
+    .signature {
+      font-style: italic;
+      color: var(--gold);
+      font-size: clamp(24px, 5vw, 34px);
+      text-align: right;
+      margin-top: 28px
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 18px 55px;
+      color: #9da2c0;
+      font: 11px/1.8 Arial, sans-serif;
+      letter-spacing: .08em
+    }
+
+    .heart {
+      color: #f1a1bb
+    }
+
+    .confetti {
+      position: fixed;
+      z-index: 30;
+      pointer-events: none;
+      top: -20px;
+      font-size: 18px;
+      animation: fall 3.5s linear forwards
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .8s, transform .8s
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    @keyframes flicker {
+      from {
+        transform: translateX(-50%) rotate(-4deg) scale(.96)
+      }
+
+      to {
+        transform: translateX(-50%) rotate(4deg) scale(1.06)
+      }
+    }
+
+    @keyframes moonFloat {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0
+      }
+    }
+
+    @media(max-width:680px) {
+      .music {
+        top: 10px;
+        right: 10px;
+        padding: 8px 10px
+      }
+
+      .music span {
+        max-width: 88px
+      }
+
+      .hero {
+        padding-top: 110px
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px
+      }
+
+      .memory {
+        min-height: 220px
+      }
+
+      .memory:nth-child(2),
+      .memory:nth-child(5) {
+        margin-top: 16px
+      }
+
+      .memory figcaption {
+        left: 12px;
+        right: 10px;
+        bottom: 13px;
+        font-size: 15px
+      }
+
+      .memory figcaption small {
+        font-size: 8px
+      }
+
+      section {
+        padding: 76px 16px
+      }
+
+      .cake-wrap {
+        transform: scale(.9);
+        transform-origin: top center;
+        height: 255px;
+        margin-bottom: -3px
+      }
+    }
+
+    @media(max-width:390px) {
+      .gallery {
+        grid-template-columns: 1fr
+      }
+
+      .memory {
+        aspect-ratio: 4/3;
+        min-height: 250px
+      }
+
+      .memory:nth-child(n) {
+        margin-top: 0
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *:before,
+      *:after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <audio id="birthdaySong" loop preload="auto">
+    <!-- Müzik dosyasının yolunu projene göre düzelttik (music/gidisat.mp3) -->
+    <source src="music/gidisat.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="music" aria-label="Müzik kontrolü">
+    <span id="musicLabel">♫ Gidişat · Tan Taşçı</span>
+    <button id="musicToggle" type="button" aria-label="Müziği başlat veya duraklat">▶</button>
+  </div>
+
+  <main class="site">
+    <header class="hero" id="top">
+      <div>
+        <div class="moon" aria-hidden="true">☾</div>
+        <div class="eyebrow">Bu gece gökyüzü senin için parlıyor</div>
+        <h1>İyi ki doğdun<em>Ramazan.</em></h1>
+        <p class="hero-copy">Bazı insanlar hayatına girer ve her şeyi biraz daha anlamlı yapar. Sen, benim için o
+          insanın çok daha fazlasısın.</p>
+        <button class="button" id="startButton" type="button">Bu gece sana ait ✦</button>
+      </div>
+      <div class="scroll-note">Aşağıda sana sakladığım şeyler var ↓</div>
+    </header>
+
+    <section id="memories">
+      <div class="section-head fade-in">
+        <div class="kicker">Biriktirdiğimiz güzel şeyler</div>
+        <h2>Bizden hatıralar</h2>
+        <div class="divider"></div>
+        <p class="section-intro">Her fotoğrafın içinde bir an, her anın içinde de benim için çok kıymetli bir sen
+          varsın.</p>
+      </div>
+
+      <div class="gallery">
+        <figure class="memory">
+          <div class="placeholder">
+            <div><b>✧</b>BURAYA FOTOĞRAF 1<br><small>images/foto1.jpg</small></div>
+          </div>
+          <img src="images/foto1.jpg" alt="Birlikte güzel bir anımız" loading="lazy">
+          <figcaption><small>Bir güzel an</small>Seninle geçen zaman</figcaption>
+        </figure>
+        <figure class="memory">
+          <div class="placeholder">
+            <div><b>☾</b>BURAYA FOTOĞRAF 2<br><small>images/foto2.jpg</small></div>
+          </div>
+          <img src="images/foto2.jpg" alt="Birlikte çekildiğimiz fotoğraf" loading="lazy">
+          <figcaption><small>Gülüşün</small>En sevdiğim manzara</figcaption>
+        </figure>
+        <figure class="memory">
+          <div class="placeholder">
+            <div><b>♡</b>BURAYA FOTOĞRAF 3<br><small>images/foto3.jpg</small></div>
+          </div>
+          <img src="images/foto3.jpg" alt="Bizim için özel bir an" loading="lazy">
+          <figcaption><small>Biz</small>İyi ki yollarımız kesişmiş</figcaption>
+        </figure>
+        <figure class="memory">
+          <div class="placeholder">
+            <div><b>✦</b>BURAYA FOTOĞRAF 4<br><small>images/foto4.jpg</small></div>
+          </div>
+          <img src="images/foto4.jpg" alt="Birlikte yaşadığımız güzel bir an" loading="lazy">
+          <figcaption><small>Küçük mutluluklar</small>Yanımda olman yeter</figcaption>
+        </figure>
+        <figure class="memory">
+          <div class="placeholder">
+            <div><b>☼</b>BURAYA FOTOĞRAF 5<br><small>images/foto5.jpg</small></div>
+          </div>
+          <img src="images/foto5.jpg" alt="Güzel bir hatıramız" loading="lazy">
+          <figcaption><small>Hatıralar</small>Kalbimde yeri ayrı</figcaption>
+        </figure>
+        <figure class="memory">
+          <div class="placeholder">
+            <div><b>∞</b>BURAYA FOTOĞRAF 6<br><small>images/foto6.jpg</small></div>
+          </div>
+          <img src="images/foto6.jpg" alt="Birlikte nice güzel günlere" loading="lazy">
+          <figcaption><small>Daha nicelerine</small>Devamı bizim olsun</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cake-section" id="wish">
+      <div class="section-head fade-in">
+        <div class="kicker">Şimdi bir dilek tut</div>
+        <h2>Mumları üfle, aşkım 🎂</h2>
+        <div class="divider"></div>
+        <p class="section-intro">Bu gece dilediğin her güzel şey seni bulsun. Hazır olduğunda pastaya dokun ve mumlarını
+          söndür.</p>
+      </div>
+      <div class="cake-card fade-in">
+        <p class="cake-instruction">Gözlerini kapat, içinden en güzel dileğini geçir…<br>Sonra aşağıdaki pastaya dokun.
+          ✨</p>
+        <button id="cakeButton" type="button" aria-label="Doğum günü pastasının mumlarını söndür"
+          style="display:block;width:100%;border:0;background:transparent;color:inherit;cursor:pointer">
+          <div class="cake-wrap">
+            <div class="cake" id="cake">
+              <div class="cake-base"></div>
+              <div class="cake-top"><i class="icing-drip drip1"></i><i class="icing-drip drip2"></i><i
+                  class="icing-drip drip3"></i><i class="icing-drip drip4"></i></div>
+              <i class="berry berry1"></i><i class="berry berry2"></i><i class="berry berry3"></i>
+              <div class="candle c1"><i class="flame"></i></div>
+              <div class="candle c2"><i class="flame"></i></div>
+              <div class="candle c3"><i class="flame"></i></div>
+            </div>
+          </div>
+          <div class="cake-hint" id="cakeHint">✦ Dokun ve dileğini gönder ✦</div>
+        </button>
+        <p class="cake-message" id="cakeMessage">Dilediğin her şey gerçek olsun, sevgilim.<br><span
+            style="color:var(--gold)">İyi ki doğdun, iyi ki varsın. ♡</span></p>
+      </div>
+    </section>
+
+    <section id="letter">
+      <div class="section-head fade-in">
+        <div class="kicker">Kalbimden sana</div>
+        <h2>Sana söylemek istediklerim…</h2>
+        <div class="divider"></div>
+      </div>
+      <article class="letter-wrap fade-in">
+        <div class="letter">Aşkım,
+
+          Bugün senin doğum günün… Ama ben bugün sadece senin dünyaya geldiğin günü değil, bir gün yollarımızın
+          kesişmesini ve hayatımda senin gibi birinin olmasını da kutluyorum.
+
+          Bazen sana içimde olan her şeyi anlatmaya kelimeler yetmiyor. Belki her zaman doğru cümleleri kuramıyorum,
+          belki hissettiklerimin hepsini sana gösteremiyorum. Ama bilmeni istediğim bir şey var: <strong>Sen benim için
+            sıradan biri değilsin.</strong> Varlığın, sesin, gülüşün ve birlikte biriktirdiğimiz küçücük anlar bile
+          benim için çok değerli.
+
+          Hayat her zaman kolay olmayabilir. Bazen yorulabilir, bazen birbirimizi anlamakta zorlanabiliriz. Ama ben
+          güzel günlerimiz kadar zor günlerimizde de birbirimizi dinleyebilmeyi, birbirimize sarılabilmeyi ve aynı
+          hikâyenin içinde el ele yürümeyi diliyorum. Çünkü benim için sevgi yalnızca güzel anlarda gülmek değil; zor
+          zamanlarda da birbirinin kalbine özen gösterebilmek.
+
+          Yeni yaşında kalbinin hafif olmasını, yüzünün hep içtenlikle gülmesini, hayallerine birer birer yaklaşmanı
+          istiyorum. Kendinle gurur duyduğun, huzurla uyandığın, emeklerinin karşılığını aldığın bir yaşın olsun.
+          Dilerim hayat sana hak ettiğin güzellikleri getirir. Ben de yanında olup mutluluklarına ortak olmayı,
+          başarılarını seninle kutlamayı ve birlikte daha nice anı biriktirmeyi çok isterim.
+
+          <strong>İyi ki doğdun Ramazan. İyi ki bu dünyadasın, iyi ki seni tanımışım.</strong> Bu gece tuttuğun
+          dileklerin en güzelleri seni bulsun. Yeni yaşın sana sağlık, huzur, cesaret ve çokça mutluluk getirsin.
+
+          Ve ne olursa olsun, bugün sana bir kez daha söylemek istiyorum: Seni seviyorum, sevgilim. Umarım bu küçücük
+          sürpriz, sana kalbimdeki yerinin ne kadar özel olduğunu hissettirir.
+        </div>
+        <div class="signature">Seni seven… ♡</div>
+      </article>
+    </section>
+
+    <footer>
+      SENİN İÇİN, KALBİMDEN GELEN KÜÇÜK BİR SÜRPRİZLE HAZIRLANDI<br>
+      <span class="heart">♡</span> Nice yaşlarına, sevgilim. <span class="heart">♡</span>
+    </footer>
+  </main>
+
+  <script>
+    // Yıldızlı gökyüzü (Düzeltildi)
+    (() => {
+      const canvas = document.getElementById('starfield');
+      const ctx = canvas.getContext('2d');
+      let stars = [], w = 0, h = 0, dpr = 1;
+      function resize() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = window.innerWidth;
+        h = window.innerHeight;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        stars = Array.from({ length: Math.min(150, Math.floor((w * h) / 6500)) }, () => ({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() * 1.3 + .25,
+          a: Math.random() * .65 + .2,
+          s: Math.random() * .012 + .003,
+          phase: Math.random() * 6
+        }));
+      }
+      function draw() {
+        ctx.clearRect(0, 0, w, h);
+        for (const s of stars) {
+          s.phase += s.s;
+          const alpha = s.a * (.65 + Math.sin(s.phase) * .35);
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255,239,199,${alpha})`;
+          ctx.fill();
+        }
+        requestAnimationFrame(draw);
+      }
+      window.addEventListener('resize', resize);
+      resize();
+      draw();
+    })();
+
+    // Fotoğraflar yoksa şık yer tutucu görünür; dosya gelince otomatik gizlenir.
+    document.querySelectorAll('.memory').forEach(card => {
+      const img = card.querySelector('img');
+      const placeholder = card.querySelector('.placeholder');
+      img.addEventListener('load', () => { placeholder.style.display = 'none'; });
+      img.addEventListener('error', () => { img.style.display = 'none'; placeholder.style.display = 'grid'; });
+      if (img.complete && img.naturalWidth > 0) placeholder.style.display = 'none';
+    });
+
+    // Kaydırdıkça belirme animasyonları
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll('.fade-in,.memory').forEach(el => observer.observe(el));
+
+    // Müzik kontrolü ve Başlat Butonu
+    const song = document.getElementById('birthdaySong');
+    const musicToggle = document.getElementById('musicToggle');
+    const musicLabel = document.getElementById('musicLabel');
+
+    async function toggleMusic() {
+      if (song.paused) {
+        try {
+          await song.play();
+          musicToggle.textContent = 'Ⅱ';
+          musicLabel.textContent = '♫ Gidişat çalıyor';
+        } catch (e) {
+          console.error("Müzik çalma hatası:", e);
+          musicLabel.textContent = 'Müzik dosyası bulunamadı';
+          musicToggle.textContent = '▶';
+        }
+      } else {
+        song.pause();
+        musicToggle.textContent = '▶';
+        musicLabel.textContent = '♫ Gidişat · Tan Taşçı';
+      }
+    }
+
+    musicToggle.addEventListener('click', toggleMusic);
+
+    document.getElementById('startButton').addEventListener('click', () => {
+      document.getElementById('memories').scrollIntoView({ behavior: 'smooth' });
+      if (song.paused) toggleMusic();
+    });
+
+    // Mumlara dokununca alevler söner
+    const cake = document.getElementById('cake');
+    const cakeButton = document.getElementById('cakeButton');
+    const cakeHint = document.getElementById('cakeHint');
+    const cakeMessage = document.getElementById('cakeMessage');
+    let blown = false;
+
+    function celebrate() {
+      if (blown) return;
+      blown = true;
+      cake.classList.add('blown');
+      cakeHint.textContent = '✦ Dileğin gökyüzüne emanet ✦';
+      cakeMessage.classList.add('show');
+      for (let i = 0; i < 42; i++) {
+        const el = document.createElement('span');
+        el.className = 'confetti';
+        el.textContent = ['✦', '♡', '✧', '⋆', '♥'][Math.floor(Math.random() * 5)];
+        el.style.left = Math.random() * 100 + 'vw';
+        el.style.animationDelay = (Math.random() * .8) + 's';
+        el.style.color = ['#f5d99b', '#f3a6bd', '#d8c5ff', '#fff7e9'][Math.floor(Math.random() * 4)];
+        el.style.fontSize = (12 + Math.random() * 15) + 'px';
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 4500);
+      }
+    }
+    cakeButton.addEventListener('click', celebrate);
+  </script>
+</body>
+
+</html>
